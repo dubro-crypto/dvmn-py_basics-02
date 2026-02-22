@@ -7,8 +7,8 @@ password = os.getenv("PASSWORD")
 sender="dubrovinmichael@yandex.ru"
 addressee="dubrovinmichael@yandex.ru"
 latter=\
-"""From: dubrovinmichael@yandex.ru
-To: dubrovinmichael@yandex.rus
+"""From: %from_email%
+To: %to_email%
 Subject:Приглашение!
 Content-Type: text/plain; charset="UTF-8"
 
@@ -28,6 +28,8 @@ Content-Type: text/plain; charset="UTF-8"
 Регистрируйся → %website%  
 На курсы, которые еще не вышли, можно подписаться и получить уведомление о релизе сразу на имейл."""
 
+latter = latter.replace("%from_email%", sender)
+latter = latter.replace("%to_email%", addressee)
 latter=latter.replace("%website%","https://dvmn.org/profession-ref-program/")
 latter=latter.replace("%friend_name%!","Дмитрий")
 latter=latter.replace("%my_name%","Михаил")
